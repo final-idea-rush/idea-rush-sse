@@ -25,6 +25,10 @@ jobs:
         with:
           java-version: 17
 
+      - name: create resource file
+        run: mkdir -p ./src/main/resources
+        shell: bash
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
         shell: bash

@@ -4,6 +4,7 @@ import com.bid.idearushsse.global.security.AuthPayload;
 import com.bid.idearushsse.sse.service.SseService;
 import com.bid.idearushsse.sse.type.SseConnect;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 

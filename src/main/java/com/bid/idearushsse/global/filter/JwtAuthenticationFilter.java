@@ -1,7 +1,7 @@
 package com.bid.idearushsse.global.filter;
 
-import com.bid.idearush.global.security.UserAuthentication;
-import com.bid.idearush.global.util.JwtUtils;
+import com.bid.idearushsse.global.security.UserAuthentication;
+import com.bid.idearushsse.global.util.JwtUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

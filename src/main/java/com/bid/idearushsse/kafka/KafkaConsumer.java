@@ -13,8 +13,8 @@ public class KafkaConsumer {
 
     private final SseService sseService;
 
-    @KafkaListener(topics = "bid")
-    public void listen(String message) {
+    @KafkaListener(topics = {"bid", "notice"} )
+    public void listenBid(String message) {
         SseEvent sseEvent = SseEvent.valueOf(message.split("#")[0]);
         String content = message.split("#")[1];
         Long id = Long.valueOf(message.split("#")[2]);

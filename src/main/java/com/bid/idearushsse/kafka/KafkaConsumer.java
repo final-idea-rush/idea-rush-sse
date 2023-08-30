@@ -13,15 +13,11 @@ public class KafkaConsumer {
 
     private final SseService sseService;
 
-    @KafkaListener(topics = "test", groupId = "sse_group")
+    @KafkaListener(topics = "bid")
     public void listen(String message) {
         SseEvent sseEvent = SseEvent.valueOf(message.split("#")[0]);
         String content = message.split("#")[1];
         Long id = Long.valueOf(message.split("#")[2]);
-
-        System.out.println(sseEvent);
-        System.out.println(content);
-        System.out.println(id);
 
         sseService.send(sseEvent.getSseConnect(), sseEvent, id, content);
     }

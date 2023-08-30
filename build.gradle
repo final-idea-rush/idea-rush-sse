@@ -36,6 +36,25 @@ dependencies {
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
 }
 
+processResources.dependsOn('securityInfo')
+
+task securityInfo() {
+    doLast {
+        def sourceFile = file('./idea-rush-security/application-sse.yaml')
+        def destinationFile = file('src/main/resources/application.yaml')
+
+        destinationFile.text = sourceFile.text
+    }
+}
+
+bootJar{
+    archiveFileName = 'app.jar'
+}
+
+jar{
+    enabled=false
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
